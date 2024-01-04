@@ -14,6 +14,7 @@
 		A495E7362B46C46E000BDD2C /* PokeApp_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495E7352B46C46E000BDD2C /* PokeApp_SwiftUITests.swift */; };
 		A495E7402B46C46E000BDD2C /* PokeApp_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495E73F2B46C46E000BDD2C /* PokeApp_SwiftUIUITests.swift */; };
 		A495E7422B46C46E000BDD2C /* PokeApp_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495E7412B46C46E000BDD2C /* PokeApp_SwiftUIUITestsLaunchTests.swift */; };
+		A495E7502B46CA0C000BDD2C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A495E74F2B46CA0B000BDD2C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A495E73B2B46C46E000BDD2C /* PokeApp_SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeApp_SwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A495E73F2B46C46E000BDD2C /* PokeApp_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApp_SwiftUIUITests.swift; sourceTree = "<group>"; };
 		A495E7412B46C46E000BDD2C /* PokeApp_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApp_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A495E74F2B46CA0B000BDD2C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		A495E7182B46C462000BDD2C = {
 			isa = PBXGroup;
 			children = (
+				A495E74F2B46CA0B000BDD2C /* .gitignore */,
 				A495E7232B46C462000BDD2C /* PokeApp_SwiftUI */,
 				A495E7342B46C46E000BDD2C /* PokeApp_SwiftUITests */,
 				A495E73E2B46C46E000BDD2C /* PokeApp_SwiftUIUITests */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A495E72C2B46C46B000BDD2C /* Preview Assets.xcassets in Resources */,
+				A495E7502B46CA0C000BDD2C /* .gitignore in Resources */,
 				A495E7292B46C46B000BDD2C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
