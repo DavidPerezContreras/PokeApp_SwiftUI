@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var coordinator: Coordinator
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TabView {
+                coordinator.makePokemonsView()
+                    .tabItem {
+                        Label("contentView.homeTab".localized(), systemImage: "sparkles.tv")
+                    }
+                
+                coordinator.makeAboutView()
+                    .tabItem {
+                        Label("contentView.aboutTab".localized(), systemImage: "person.2.fill")
+                    }
+            }
         }
-        .padding()
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let coordinator = Coordinator(mock: true)
+        ContentView().environmentObject(coordinator)
     }
 }

@@ -7,6 +7,24 @@
 
 import Foundation
 
-struct GetPokemonsResponse{
-    var URLs: [String]
+struct GetPokemonsResponse : Decodable{
+    var pokemonList: PokemonListDTO
+}
+
+
+
+
+// Define the PokemonList struct
+struct PokemonListDTO: Decodable {
+    //let count: Int
+    //let next: String
+    //let previous: String?
+    let results: [PokemonListItemDTO]
+}
+
+
+// Define the Pokemon struct
+struct PokemonListItemDTO: Decodable {
+    let name: String
+    let url: String
 }

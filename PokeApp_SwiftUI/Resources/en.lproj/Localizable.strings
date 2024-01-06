@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  PokeApp_SwiftUI
+
+  Created by user245669 on 1/6/24.
+  
+*/
+// MARK: - ContentView
+"contentView.pokemonsTab" = "Pokemons";
+"contentView.aboutTab" = "About";
+
+
+// MARK: - PokemonsView
+"pokemonsView.title" = "Pokemons";
+
+// MARK: - AboutView
+"aboutView.title" = "About me";

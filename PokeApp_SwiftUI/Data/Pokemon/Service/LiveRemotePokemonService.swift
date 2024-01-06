@@ -15,20 +15,8 @@ struct LiveRemotePokemonService : RemotePokemonService{
     }
     
     func getPokemons(getPokemonsRequest: GetPokemonsRequest) async throws -> GetPokemonsResponse {
-        return GetPokemonsResponse(
-            URLs: [
-                "https://pokeapi.co/api/v2/pokemon/1/",
-                "https://pokeapi.co/api/v2/pokemon/2/",
-                "https://pokeapi.co/api/v2/pokemon/3/",
-                "https://pokeapi.co/api/v2/pokemon/4/",
-                "https://pokeapi.co/api/v2/pokemon/5/",
-                "https://pokeapi.co/api/v2/pokemon/6/",
-                "https://pokeapi.co/api/v2/pokemon/7/",
-                "https://pokeapi.co/api/v2/pokemon/8/",
-                "https://pokeapi.co/api/v2/pokemon/9/",
-                "https://pokeapi.co/api/v2/pokemon/10/",
-            ]
-        )
+        let response: GetPokemonsResponse = try await networkClient.get(url: "https://pokeapi.co/api/v2/pokemon?offset=\(getPokemonsRequest.offst)&limit=\(getPokemonsRequest.limit)")
+                return response
     }
     
     

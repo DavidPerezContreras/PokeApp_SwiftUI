@@ -15,12 +15,28 @@ class Coordinator :ObservableObject{
     
     
     
-    init(){
+    init(mock: Bool){
         
         let networkClient: NetworkClient = URLSessionNetworkClient()
-        let remotePokemonService: RemotePokemonService = LiveRemotePokemonService(networkClient:networkClient)
+        let remotePokemonService: RemotePokemonService = mock ? MockRemotePokemonService(): LiveRemotePokemonService(networkClient:networkClient)
         
         pokemonRepository = PokemonRepository(remotePokemonService: remotePokemonService)
         getPokemonListUseCase = GetPokemonListUseCase(pokemonRepository: pokemonRepository)
     }
+    
+    
+    
+    // MARK: - PokemonsView
+        func makePokemonsView() -> PokemonsView {
+            PokemonsView(viewModel: makePokemonsViewModel())
+        }
+
+        func makePokemonsViewModel() -> PokemonsViewModel {
+            PokemonsViewModel(getPokemonListUseCase: getPokemonListUseCase)
+        }
+    // MARK: - AboutView
+        func makeAboutView() -> AboutView {
+            AboutView()
+        }
+    
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct PokeApp_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(Coordinator())
+            ContentView().environmentObject(Coordinator(mock: true))
         }
     }
 }

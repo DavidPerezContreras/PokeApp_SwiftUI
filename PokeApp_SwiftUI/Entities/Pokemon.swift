@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Pokemon{
+struct Pokemon {
     let id :Int
-    let name: Int
+    let name: String
     let abilities: [String]
     let officialArtwork: String
 }
