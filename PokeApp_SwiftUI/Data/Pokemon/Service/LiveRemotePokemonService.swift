@@ -8,6 +8,8 @@
 import Foundation
 
 struct LiveRemotePokemonService : RemotePokemonService{
+
+    
     private let networkClient: NetworkClient
     
     init(networkClient: NetworkClient) {
@@ -16,8 +18,11 @@ struct LiveRemotePokemonService : RemotePokemonService{
     
     func getPokemons(getPokemonsRequest: GetPokemonsRequest) async throws -> GetPokemonsResponse {
         let response: GetPokemonsResponse = try await networkClient.get(url: "https://pokeapi.co/api/v2/pokemon?offset=\(getPokemonsRequest.offst)&limit=\(getPokemonsRequest.limit)")
-                return response
+        return response
     }
     
-    
+    func getPokemonDetails(getPokemonDetailsRequest: GetPokemonDetailsRequest) async throws -> GetPokemonDetailsResponse {
+        let response: GetPokemonDetailsResponse = try await networkClient.get(url: getPokemonDetailsRequest.url)
+        return response
+    }
 }

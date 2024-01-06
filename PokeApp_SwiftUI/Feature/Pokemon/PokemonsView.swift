@@ -12,6 +12,7 @@ struct PokemonsView : View {
     
     init(viewModel: PokemonsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        
     }
     
     @StateObject private var viewModel: PokemonsViewModel
@@ -19,9 +20,11 @@ struct PokemonsView : View {
     
     var body : some View {
         List {
-            ForEach(_viewModel.wrappedValue.pokemons, id: \.id) { item in
+            ForEach(_viewModel.wrappedValue.pokemons, id: \.name) { item in
                 Text(item.name)
             }
+        }.task {
+            await _viewModel.wrappedValue.getPokemons(limit: 10, offset: 0)
         }
     
     }

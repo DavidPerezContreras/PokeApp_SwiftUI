@@ -13,7 +13,7 @@ struct ContentView: View {
             TabView {
                 coordinator.makePokemonsView()
                     .tabItem {
-                        Label("contentView.homeTab".localized(), systemImage: "sparkles.tv")
+                        Label("contentView.pokemonsTab".localized(), systemImage: "sparkles.tv")
                     }
                 
                 coordinator.makeAboutView()

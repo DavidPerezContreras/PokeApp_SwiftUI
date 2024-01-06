@@ -9,4 +9,5 @@ import Foundation
 
 protocol RemotePokemonService{
     func getPokemons(getPokemonsRequest: GetPokemonsRequest) async throws -> GetPokemonsResponse
+    func getPokemonDetails(getPokemonDetailsRequest: GetPokemonDetailsRequest) async throws -> GetPokemonDetailsResponse
 }

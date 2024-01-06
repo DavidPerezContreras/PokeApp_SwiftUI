@@ -15,10 +15,14 @@ struct GetPokemonListUseCase{
     }
     
     func getPokemonList(limit:Int, offset:Int) async throws -> [Pokemon]{
-        let pokemonList :[Pokemon] = []
+        var pokemonList :[Pokemon] = [Pokemon(id: 1, name: "Pikachu", abilities:["Ability 1"], officialArtwork: "artwork")]
         let getPokemonResponse : GetPokemonsResponse=try await pokemonRepository.getPokemons(getPokemonsRequest:GetPokemonsRequest(limit: limit, offst: limit));
         
         
+        for pokemonListItem in getPokemonResponse.results {
+            let pokemonDetailsResponse: GetPokemonDetailsResponse = await pokemonRepository.getPokemonn
+            pokemonList.append(Pokemon(id: 1, name: pokemonListItem.name, abilities: ["hola"], officialArtwork: "artwork"))
+        }
         
         
         return pokemonList

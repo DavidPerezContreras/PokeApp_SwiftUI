@@ -8,6 +8,11 @@
 import Foundation
 
 struct GetPokemonsRequest{
-    let limit:Int;
-    let offst:Int;
+    let limit:Int
+    let offst:Int
+}
+
+
+struct GetPokemonDetailsRequest {
+    let url:String
 }

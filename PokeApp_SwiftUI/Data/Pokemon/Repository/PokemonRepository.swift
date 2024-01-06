@@ -18,4 +18,8 @@ struct PokemonRepository{
     func getPokemons(getPokemonsRequest: GetPokemonsRequest) async throws -> GetPokemonsResponse {
         return try await remotePokemonService.getPokemons(getPokemonsRequest: getPokemonsRequest)
     }
+    
+    func getPokemonDetails(getPokemonDetailsRequest: GetPokemonDetailsRequest) async throws -> GetPokemonDetailsResponse{
+        return try await remotePokemonService.getPokemonDetails(getPokemonDetailsRequest: getPokemonDetailsRequest)
+    }
 }
