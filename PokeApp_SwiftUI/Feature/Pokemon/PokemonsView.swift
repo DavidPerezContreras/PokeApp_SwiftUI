@@ -22,21 +22,19 @@ struct PokemonsView : View {
             VStack{
                 Rectangle().fill().frame(height: 0)
                 ScrollView{
-                    VStack {
+                    LazyVStack {
                         ForEach(Array(_viewModel.wrappedValue.pokemons.enumerated()), id: \.element.id) { index, item in
                             Tile(pokemon: item)
                                 .onAppear{
                                     
                                     Task{
-                                        try await Task.sleep(nanoseconds: 4_000_000_000)
+                                        //try await Task.sleep(nanoseconds: 4_000_000_000)
                                         if index == viewModel.pokemons.count - 1 {
                                             await viewModel.getPokemons(limit: limit, offset: viewModel.pokemons.count)
                                         }
                                     }
                                     
                                 }
-                            
-                            
                         }
                     }.task {
                         if(viewModel.pokemons.isEmpty){
@@ -44,12 +42,10 @@ struct PokemonsView : View {
                         }
                         
                     }.frame (minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                    
-                    
                 }
             }
             
-        }.navigationTitle("pokemonsView.title".localized())
+        }
     }
 }
 

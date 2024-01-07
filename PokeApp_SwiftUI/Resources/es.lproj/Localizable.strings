@@ -16,3 +16,6 @@
 // MARK: - AboutView
 "aboutView.title" = "Acerca de";
 
+// MARK: - AbilityView
+"abilityView.title" = "Habilidades";
+

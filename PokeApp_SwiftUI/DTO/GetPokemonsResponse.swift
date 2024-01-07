@@ -48,7 +48,7 @@ struct OtherDTO: Decodable{
 }
 
 struct SpritesDTO: Decodable {
-    let other: OtherDTO	
+    let other: OtherDTO
 }
 
 struct GetPokemonDetailsResponse: Decodable {
@@ -56,7 +56,7 @@ struct GetPokemonDetailsResponse: Decodable {
     let name: String
     let abilities: [AbilityDTO]
     let sprites: SpritesDTO
-
+    
     var abilityNames: [String] {
         return abilities.map { $0.ability.name }
     }

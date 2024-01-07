@@ -12,3 +12,14 @@ extension String {
         NSLocalizedString(self, bundle: .main, comment: "")
     }
 }
+
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}

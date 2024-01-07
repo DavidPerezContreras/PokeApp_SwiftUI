@@ -15,14 +15,14 @@ struct AbilityCardView: View {
     init(abilityName: String) {
         self.abilityName = abilityName
     }
-
+    
     var body: some View {
         VStack {
-            Text(abilityName)
+            Text(abilityName.capitalizingFirstLetter())
         }
-        .frame(width: 100, height: 20)
+        .frame(width: 150, height: 50)
         .background(Color.blue)
         .cornerRadius(10)
-        .padding([.horizontal, .bottom],5)
+        .padding([.horizontal, .bottom,.top,.leading],100)
     }
 }

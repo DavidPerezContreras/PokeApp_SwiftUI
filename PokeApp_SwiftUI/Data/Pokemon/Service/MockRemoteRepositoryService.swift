@@ -15,7 +15,7 @@ struct MockRemotePokemonService : RemotePokemonService {
     func getPokemons(getPokemonsRequest: GetPokemonsRequest) async throws -> GetPokemonsResponse {
         // Create 10 mock PokemonListItemDTO objects
         var pokemonList =  [
-
+            
             PokemonListItemDTO(name: "pokemon 1", url: "https://pokeapi.co/api/v2/pokemon/1"),
             PokemonListItemDTO(name: "pokemon 2", url: "https://pokeapi.co/api/v2/pokemon/2"),
             PokemonListItemDTO(name: "pokemon 3", url: "https://pokeapi.co/api/v2/pokemon/3"),

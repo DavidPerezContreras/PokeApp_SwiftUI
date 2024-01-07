@@ -18,27 +18,32 @@ struct Tile : View{
     }
     
     var body: some View{
-        DisclosureGroup {
+        NavigationLink {
             ScrollView{
-                LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3)) {
-                    ForEach(pokemon.abilities, id: \.self) { ability in
-                        AbilityCardView(abilityName: ability)
-                                }
-                            }
-                            .padding()
-                        
+                NavigationView{
+                    LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2)) {
+                        ForEach(pokemon.abilities, id: \.self) { ability in
+                            AbilityCardView(abilityName: ability)
+                        }
                     }
-            }label: {
-                HStack {
-                    AsyncImage(url: URL(string: pokemon.officialArtwork)) { image in
-                        image.resizable()
-                    } placeholder: {
-                        ProgressView()
-                    }.frame(width: 50, height: 50)
-                    Text(pokemon.name)
+                    .padding()
+                    
                 }
-            }
+            }.navigationTitle("abilityView.title".localized())
             
-
+        }label: {
+            HStack (alignment: .center, content: {
+                AsyncImage(url: URL(string: pokemon.officialArtwork)) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }.frame(width: 80, height: 80)
+                Text(pokemon.name.capitalizingFirstLetter())
+                Spacer()
+            }
+            )
+        }
+        
+        
     }
 }

@@ -10,18 +10,18 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var coordinator: Coordinator
     var body: some View {
-            TabView {
-                coordinator.makePokemonsView()
-                    .tabItem {
-                        Label("contentView.pokemonsTab".localized(), systemImage: "sparkles.tv")
-                    }
-                
-                coordinator.makeAboutView()
-                    .tabItem {
-                        Label("contentView.aboutTab".localized(), systemImage: "person.2.fill")
-                    }
-            }
+        TabView {
+            coordinator.makePokemonsView()
+                .tabItem {
+                    Label("contentView.pokemonsTab".localized(), systemImage: "sparkles.tv")
+                }
+            
+            coordinator.makeAboutView()
+                .tabItem {
+                    Label("contentView.aboutTab".localized(), systemImage: "person.2.fill")
+                }
         }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
