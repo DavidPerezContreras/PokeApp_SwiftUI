@@ -9,7 +9,7 @@ import Foundation
 
 class PokemonsViewModel: ObservableObject {
     private let getPokemonListUseCase: GetPokemonListUseCase
-    @Published var pokemons = [Pokemon]()
+    @Published var pokemons: [Pokemon] = []
     @Published var showErrorMessage = false
     
     init(getPokemonListUseCase: GetPokemonListUseCase) {
@@ -19,7 +19,7 @@ class PokemonsViewModel: ObservableObject {
     @MainActor
     func getPokemons(limit:Int, offset:Int) async {
         do {
-            pokemons = try await getPokemonListUseCase.getPokemonList(limit: limit, offset: offset)
+            pokemons += try await getPokemonListUseCase.getPokemonList(limit: limit, offset: offset)
         } catch {
             showErrorMessage = true
         }

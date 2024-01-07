@@ -9,24 +9,41 @@ import Foundation
 import SwiftUI
 
 struct PokemonsView : View {
-    
+    let limit=50;
     init(viewModel: PokemonsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        
     }
     
     @StateObject private var viewModel: PokemonsViewModel
     @EnvironmentObject var coordinator: Coordinator
     
     var body : some View {
-        List {
-            ForEach(_viewModel.wrappedValue.pokemons, id: \.name) { item in
-                Text(item.name)
-            }
-        }.task {
-            await _viewModel.wrappedValue.getPokemons(limit: 10, offset: 0)
+        ScrollView{
+            VStack {
+                ForEach(Array(_viewModel.wrappedValue.pokemons.enumerated()), id: \.element.id) { index, item in
+                    Tile(pokemon: item)
+                        .onAppear{
+                            
+                             Task{
+                                 try await Task.sleep(nanoseconds: 4_000_000_000)
+                                if index == viewModel.pokemons.count - 1 {
+                                    await viewModel.getPokemons(limit: limit, offset: viewModel.pokemons.count)
+                                }
+                            }
+                        
+                        }
+                    
+                    
+                }
+            }.task {
+                if(viewModel.pokemons.isEmpty){
+                    await viewModel.getPokemons(limit: limit, offset: 0)
+                }
+                
+            }.frame (minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+            
+            
         }
-    
     }
 }
 
