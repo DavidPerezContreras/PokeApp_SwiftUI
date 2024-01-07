@@ -12,7 +12,7 @@ struct AboutView: View {
     var body: some View {
         ScrollView(){
             VStack(alignment: .center, spacing: 16) {
-                Text("About me")
+                Text("aboutView.title".localized())
                     .font(.title)
                     .fontWeight(.bold)
                 Text("David Pérez Contreras")
@@ -28,7 +28,7 @@ struct AboutView: View {
                 .frame(width: 200, height: 200)
                 .clipShape(Circle())
                 
-                Text("I’m a Junior Full-Stack Developer with a passion for music and technology. This is not my first Flutter app, still I’m excited to continue exploring and innovating in a technology with that many opportunities.")
+                Text("aboutView.description".localized())
                     .font(.body)
                     .foregroundColor(Color.gray)
                     .multilineTextAlignment(.center)

@@ -15,7 +15,7 @@
 
 // MARK: - AboutView
 "aboutView.title" = "About me";
-
+"aboutView.description" = "I’m a Junior Full-Stack developer with a passion for music and technology. This is my first iOS app and i'm excited to continue exploring and innovating in a technology with that many opportunities.";
 
 // MARK: - AbilityView
 "abilityView.title" = "Abilities";
